@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emerson & Yuli ❤️</title>
-    <!-- RUTA CORREGIDA HACIA LA CARPETA CSS -->
+    <!-- Ruta apuntando a la carpeta css/ -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,15 +38,15 @@
         <aside class="photo-gallery left-carousel">
             <div class="photo-carousel">
                 <button class="carousel-btn prev" onclick="moveCarousel('left', -1)">❮</button>
-                <div class="photo-track">
-                    <div class="photo-card"><img src="img/foto1.jpg" alt="Emerson y Yuli - Foto 1"></div>
-                    <div class="photo-card"><img src="img/foto2.jpg" alt="Emerson y Yuli - Foto 2"></div>
-                    <div class="photo-card"><img src="img/foto3.jpg" alt="Emerson y Yuli - Foto 3"></div>
-                    <div class="photo-card"><img src="img/foto4.jpg" alt="Emerson y Yuli - Foto 4"></div>
-                    <div class="photo-card"><img src="img/foto5.jpg" alt="Emerson y Yuli - Foto 5"></div>
-                    <div class="photo-card"><img src="img/foto6.jpg" alt="Emerson y Yuli - Foto 6"></div>
-                    <div class="photo-card"><img src="img/foto7.jpg" alt="Emerson y Yuli - Foto 7"></div>
-                    <div class="photo-card"><img src="img/foto8.jpg" alt="Emerson y Yuli - Foto 8"></div>
+                <div class="photo-track" id="track-left">
+                    <div class="photo-card active"><img src="img/foto1.jpg" alt="Foto 1"></div>
+                    <div class="photo-card"><img src="img/foto2.jpg" alt="Foto 2"></div>
+                    <div class="photo-card"><img src="img/foto3.jpg" alt="Foto 3"></div>
+                    <div class="photo-card"><img src="img/foto4.jpg" alt="Foto 4"></div>
+                    <div class="photo-card"><img src="img/foto5.jpg" alt="Foto 5"></div>
+                    <div class="photo-card"><img src="img/foto6.jpg" alt="Foto 6"></div>
+                    <div class="photo-card"><img src="img/foto7.jpg" alt="Foto 7"></div>
+                    <div class="photo-card"><img src="img/foto8.jpg" alt="Foto 8"></div>
                 </div>
                 <button class="carousel-btn next" onclick="moveCarousel('left', 1)">❯</button>
             </div>
@@ -65,7 +65,7 @@
                 <div class="youtube-container">
                     <div class="youtube-title">⚡ Una canción para nosotros ⚡</div>
                     <div class="video-responsive">
-                        <iframe id="youtubeVideo" src="https://www.youtube.com/embed/Z1zYWPBsNjw?autoplay=0&playsinline=1&rel=0" title="Nuestra canción" allow="autoplay; encrypted-media; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <iframe id="youtubeVideo" src="https://www.youtube.com/embed/Z1zYWPBsNjw?enablejsapi=1&autoplay=1&mute=1&playsinline=1&rel=0" title="Nuestra canción" allow="autoplay; encrypted-media; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                 </div>
 
@@ -168,16 +168,15 @@
         <aside class="photo-gallery right-carousel">
             <div class="photo-carousel">
                 <button class="carousel-btn prev" onclick="moveCarousel('right', -1)">❮</button>
-                <div class="photo-track">
-                    <div class="photo-card"><img src="img/foto9.jpg" alt="Emerson y Yuli - Foto 9"></div>
-                    <div class="photo-card"><img src="img/foto10.jpg" alt="Emerson y Yuli - Foto 10"></div>
-                    <div class="photo-card"><img src="img/foto11.jpg" alt="Emerson y Yuli - Foto 11"></div>
-                    <div class="photo-card"><img src="img/foto12.jpg" alt="Emerson y Yuli - Foto 12"></div>
-                    <!-- EXTENSIONES .JPEG CORREGIDAS SEGÚN TU ESTRUCTURA DE ARCHIVOS -->
-                    <div class="photo-card"><img src="img/foto13.jpeg" alt="Emerson y Yuli - Foto 13"></div>
-                    <div class="photo-card"><img src="img/foto14.jpeg" alt="Emerson y Yuli - Foto 14"></div>
-                    <div class="photo-card"><img src="img/foto15.jpeg" alt="Emerson y Yuli - Foto 15"></div>
-                    <div class="photo-card"><img src="img/foto16.jpeg" alt="Emerson y Yuli - Foto 16"></div>
+                <div class="photo-track" id="track-right">
+                    <div class="photo-card active"><img src="img/foto9.jpg" alt="Foto 9"></div>
+                    <div class="photo-card"><img src="img/foto10.jpg" alt="Foto 10"></div>
+                    <div class="photo-card"><img src="img/foto11.jpg" alt="Foto 11"></div>
+                    <div class="photo-card"><img src="img/foto12.jpg" alt="Foto 12"></div>
+                    <div class="photo-card"><img src="img/foto13.jpeg" alt="Foto 13"></div>
+                    <div class="photo-card"><img src="img/foto14.jpeg" alt="Foto 14"></div>
+                    <div class="photo-card"><img src="img/foto15.jpeg" alt="Foto 15"></div>
+                    <div class="photo-card"><img src="img/foto16.jpeg" alt="Foto 16"></div>
                 </div>
                 <button class="carousel-btn next" onclick="moveCarousel('right', 1)">❯</button>
             </div>
@@ -185,7 +184,7 @@
 
     </main>
 
-    <!-- RUTA CORREGIDA HACIA LA CARPETA JS -->
+    <!-- Ruta apuntando a la carpeta js/ -->
     <script src="js/script.js"></script>
 </body>
 
