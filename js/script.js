@@ -1,15 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Ocultar pantalla de bienvenida
+    // 1. Ocultar pantalla de bienvenida y reproducir la canción con audio
     const enterButton = document.getElementById('enterButton');
     const introScreen = document.getElementById('introScreen');
+    const iframe = document.getElementById('youtubeVideo');
 
     if (enterButton && introScreen) {
         enterButton.addEventListener('click', () => {
+            // Desvanecer la pantalla de bienvenida
             introScreen.classList.add('hidden');
+
+            // Enviar orden a la API de YouTube para quitar silencio y reproducir
+            if (iframe && iframe.contentWindow) {
+                iframe.contentWindow.postMessage('{"event":"command","func":"unMute","args":""}', '*');
+                iframe.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+            }
         });
     }
 
-    // 2. Lógica de Contadores de tiempo
+    // 2. Lógica de Contadores de tiempo en vivo
     const fechaConocimos = new Date('2026-04-10T00:00:00');
     const fechaAniversario = new Date('2026-06-24T00:00:00');
 
@@ -37,18 +45,23 @@ document.addEventListener('DOMContentLoaded', () => {
         const conocimos = calculateTime(fechaConocimos);
         const aniversario = calculateTime(fechaAniversario);
 
-        document.getElementById('counterConocimos').innerText = conocimos.daysTotal;
-        document.getElementById('timeConocimos').innerText = conocimos.timeString;
+        const elCounterConocimos = document.getElementById('counterConocimos');
+        const elTimeConocimos = document.getElementById('timeConocimos');
+        const elCounterAniversario = document.getElementById('counterAniversario');
+        const elTimeAniversario = document.getElementById('timeAniversario');
 
-        document.getElementById('counterAniversario').innerText = aniversario.daysTotal;
-        document.getElementById('timeAniversario').innerText = aniversario.timeString;
+        if (elCounterConocimos) elCounterConocimos.innerText = conocimos.daysTotal;
+        if (elTimeConocimos) elTimeConocimos.innerText = conocimos.timeString;
+        if (elCounterAniversario) elCounterAniversario.innerText = aniversario.daysTotal;
+        if (elTimeAniversario) elTimeAniversario.innerText = aniversario.timeString;
     }
 
+    // Actualizar cada segundo
     setInterval(updateCounters, 1000);
     updateCounters();
 });
 
-// 3. Lógica de los Carruseles de Fotos
+// 3. Lógica para los carruseles laterales de fotos
 const indices = { left: 0, right: 0 };
 
 function moveCarousel(side, direction) {
@@ -58,9 +71,12 @@ function moveCarousel(side, direction) {
     const cards = track.querySelectorAll('.photo-card');
     if (cards.length === 0) return;
 
+    // Quitar la clase active a la foto actual
     cards[indices[side]].classList.remove('active');
     
+    // Calcular el siguiente índice (bucle)
     indices[side] = (indices[side] + direction + cards.length) % cards.length;
     
+    // Mostrar la nueva foto
     cards[indices[side]].classList.add('active');
 }
