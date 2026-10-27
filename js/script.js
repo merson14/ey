@@ -87,6 +87,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const iframe = slide.querySelector('iframe');
             const active = i === index;
             slide.classList.toggle('active', active);
+            const video = slide.querySelector('video');
+            if (video && !active) {
+                video.pause();
+                video.currentTime = 0;
+            }
             if (!iframe) return;
             if (!active) {
                 // Descargar el iframe al salir para detener sonido y reproducción.
