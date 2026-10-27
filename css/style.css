@@ -108,21 +108,28 @@ body {
 /* Video YouTube */
 .youtube-container { margin-bottom: 30px; text-align: center; }
 .youtube-title { font-size: 0.9rem; color: #a38898; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1px; }
+/* Ventana adaptable para videos de YouTube y MP4 */
 .video-responsive {
     position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
     overflow: hidden;
-    border-radius: 6px;
+    border-radius: 8px;
     border: 1px solid #3d2033;
+    background: #000;
 }
-.video-responsive iframe {
+.video-responsive iframe,
+.video-responsive video {
     position: absolute;
-    top: 0;
-    left: 0;
+    inset: 0;
     width: 100%;
     height: 100%;
     border: 0;
+}
+.video-responsive video {
+    object-fit: contain;
+    background: #000;
 }
 
 /* Encabezado */
@@ -292,3 +299,4 @@ body {
 #videoCurrentTitle { overflow-wrap:anywhere; }
 #videoCount { color:#e6004c; font-size:.75rem; }
 @media(max-width:480px) { .video-controls {gap:9px;} .youtube-title {font-size:.75rem;} }
+
