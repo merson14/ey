@@ -105,30 +105,43 @@ body {
 .bottom-left { bottom: 10px; left: 10px; border-right: none; border-top: none; }
 .bottom-right { bottom: 10px; right: 10px; border-left: none; border-top: none; }
 
-/* VIDEO: marco 16:9 fijo, imagen completa sin recortes */
+/* VIDEO: el marco sigue las proporciones originales del archivo MP4 */
 .youtube-container { margin-bottom: 30px; text-align: center; min-width: 0; }
 .youtube-title { font-size: .9rem; color: #a38898; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1px; }
+.video-carousel, .video-slide { width: 100%; min-width: 0; }
 .video-responsive {
-    position: relative;
     width: 100%;
-    aspect-ratio: 16 / 9;
     height: auto;
     padding: 0;
-    overflow: hidden;
+    overflow: visible;
     border-radius: 6px;
     border: 1px solid #3d2033;
     background: #000;
 }
-.video-responsive iframe,
+/* El MP4 define la altura del recuadro. No forzar 16:9 ni posición absoluta. */
 .video-responsive video {
     display: block;
+    position: static;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    max-height: none;
+    aspect-ratio: auto;
+    object-fit: contain;
+    object-position: center;
+    border: 0;
+    border-radius: 5px;
+    background: #000;
+}
+/* Solo YouTube necesita un marco horizontal de 16:9. */
+.video-responsive:has(iframe) { aspect-ratio: 16 / 9; position: relative; overflow: hidden; }
+.video-responsive iframe {
     position: absolute;
     inset: 0;
+    display: block;
     width: 100%;
     height: 100%;
     border: 0;
-    object-fit: contain;
-    object-position: center;
 }
 /* Encabezado */
 .header { text-align: center; margin-bottom: 25px; }
