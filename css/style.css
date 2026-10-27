@@ -108,28 +108,21 @@ body {
 /* Video YouTube */
 .youtube-container { margin-bottom: 30px; text-align: center; }
 .youtube-title { font-size: 0.9rem; color: #a38898; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1px; }
-/* Ventana adaptable para videos de YouTube y MP4 */
 .video-responsive {
     position: relative;
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    height: auto;
+    padding-bottom: 56.25%;
+    height: 0;
     overflow: hidden;
-    border-radius: 8px;
+    border-radius: 6px;
     border: 1px solid #3d2033;
-    background: #000;
 }
-.video-responsive iframe,
-.video-responsive video {
+.video-responsive iframe {
     position: absolute;
-    inset: 0;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     border: 0;
-}
-.video-responsive video {
-    object-fit: contain;
-    background: #000;
 }
 
 /* Encabezado */
@@ -300,3 +293,46 @@ body {
 #videoCount { color:#e6004c; font-size:.75rem; }
 @media(max-width:480px) { .video-controls {gap:9px;} .youtube-title {font-size:.75rem;} }
 
+/* MP4 y YouTube se adaptan al mismo contenedor 16:9 */
+.video-responsive iframe,
+.video-responsive video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+.video-responsive video { background: #000; object-fit: contain; }
+
+
+/* AJUSTE REAL: el marco toma la proporcion nativa de cada MP4 */
+.video-carousel, .video-slide, .youtube-container { width: 100%; min-width: 0; }
+.video-responsive {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9; /* valor provisional, JS lo actualiza en MP4 */
+    padding: 0 !important;
+    overflow: hidden;
+    background: #000;
+}
+.video-responsive iframe,
+.video-responsive video {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    object-fit: contain !important;
+    object-position: center;
+}
+/* El marco de un video vertical se estrecha y se centra, sin cortar imagen */
+.video-responsive:has(video[data-orientation="portrait"]) {
+    width: min(100%, 360px);
+    margin-inline: auto;
+}
+@media (max-width: 480px) {
+    .video-responsive:has(video[data-orientation="portrait"]) { width: min(100%, 300px); }
+}
