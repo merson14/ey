@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emerson & Yuli ❤️</title>
+    <!-- RUTA CORREGIDA HACIA LA CARPETA CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- MARCA DE AGUA -->
+    <div class="watermark">E ❤️ Y</div>
+
+    <!-- PANTALLA DE INTRODUCCIÓN -->
+    <section class="intro-screen" id="introScreen">
+        <div class="intro-symbol">❤️</div>
+        <div class="intro-small">Una pequeña historia</div>
+        <div class="intro-title">Para Yuli</div>
+        <div class="intro-names">EMERSON & YULI</div>
+        <div class="intro-message">
+            Hay cosas que son difíciles de explicar con palabras así que decidí hacerte algo para que puedas verlas de otra manera
+        </div>
+        <button class="enter-button" id="enterButton">
+            ❤️ Toca para comenzar ❤️
+        </button>
+    </section>
+
+    <!-- CONTENEDOR PRINCIPAL -->
+    <main class="main-layout">
+
+        <!-- FOTOGRAFÍAS IZQUIERDA -->
+        <aside class="photo-gallery left-carousel">
+            <div class="photo-carousel">
+                <button class="carousel-btn prev" onclick="moveCarousel('left', -1)">❮</button>
+                <div class="photo-track" id="track-left">
+                    <div class="photo-card"><img src="img/foto1.jpg" alt="Emerson y Yuli - Foto 1"></div>
+                    <div class="photo-card"><img src="img/foto2.jpg" alt="Emerson y Yuli - Foto 2"></div>
+                    <div class="photo-card"><img src="img/foto3.jpg" alt="Emerson y Yuli - Foto 3"></div>
+                    <div class="photo-card"><img src="img/foto4.jpg" alt="Emerson y Yuli - Foto 4"></div>
+                    <div class="photo-card"><img src="img/foto5.jpg" alt="Emerson y Yuli - Foto 5"></div>
+                    <div class="photo-card"><img src="img/foto6.jpg" alt="Emerson y Yuli - Foto 6"></div>
+                    <div class="photo-card"><img src="img/foto7.jpg" alt="Emerson y Yuli - Foto 7"></div>
+                    <div class="photo-card"><img src="img/foto8.jpg" alt="Emerson y Yuli - Foto 8"></div>
+                </div>
+                <button class="carousel-btn next" onclick="moveCarousel('left', 1)">❯</button>
+            </div>
+        </aside>
+
+        <!-- TARJETA PRINCIPAL (HISTORIA CENTRAL) -->
+        <div class="story-container">
+            <div class="card">
+                <!-- Esquinas Decorativas -->
+                <div class="corner-accent top-left"></div>
+                <div class="corner-accent top-right"></div>
+                <div class="corner-accent bottom-left"></div>
+                <div class="corner-accent bottom-right"></div>
+
+                <!-- CARRUSEL DE VIDEOS: deja los futuros videos comentados hasta necesitarlos -->
+                <section class="youtube-container" aria-label="Nuestros videos">
+                    <div class="youtube-title">⚡ Nuestros videos y canciones ⚡</div>
+                    <div class="video-carousel" id="videoCarousel">
+                        <div class="video-slide active" data-video-title="Nuestra canción">
+                            <div class="video-responsive">
+                                <iframe id="youtubeVideo" src="https://www.youtube.com/embed/Z1zYWPBsNjw?autoplay=0&amp;playsinline=1&amp;rel=0" title="Nuestra canción" loading="lazy" allow="autoplay; encrypted-media; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <!-- VIDEO 2 (DESACTIVADO): para activarlo, quita los comentarios y cambia el ID.
+                        <div class="video-slide" data-video-title="Nuestro segundo video">
+                            <div class="video-responsive">
+                                <iframe data-src="https://www.youtube.com/embed/ID_VIDEO_2?autoplay=0&amp;playsinline=1&amp;rel=0" title="Nuestro segundo video" loading="lazy" allow="autoplay; encrypted-media; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        -->
+                        <!-- VIDEO 3 (DESACTIVADO): para activarlo, quita los comentarios y cambia el ID.
+                        <div class="video-slide" data-video-title="Otro recuerdo nuestro">
+                            <div class="video-responsive">
+                                <iframe data-src="https://www.youtube.com/embed/ID_VIDEO_3?autoplay=0&amp;playsinline=1&amp;rel=0" title="Otro recuerdo nuestro" loading="lazy" allow="autoplay; encrypted-media; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        -->
+                    </div>
+                    <div class="video-controls">
+                        <button type="button" class="video-nav" id="videoPrev" aria-label="Video anterior">❮</button>
+                        <div class="video-meta"><span id="videoCurrentTitle">Nuestra canción</span><span id="videoCount">1 / 1</span></div>
+                        <button type="button" class="video-nav" id="videoNext" aria-label="Siguiente video">❯</button>
+                    </div>
+                </section>
+
+                <!-- HEADER -->
+                <header class="header">
+                    <span class="subtitle-tag">// Emerson & Yuli //</span>
+                    <h1 class="title">Nuestra Historia</h1>
+                    <div class="names">EMERSON ❤️ YULI</div>
+                </header>
+
+                <div class="intro">
+                    Una historia que comenzó sin saber todo lo que llegaríamos a significar el uno para el otro.
+                </div>
+
+                <!-- CONTADORES -->
+                <div class="counters-container">
+                    <!-- CONOCIMIENTO -->
+                    <div class="counter-box">
+                        <div class="counter-title">💜 Desde que nos conocimos 💜</div>
+                        <div class="counter-date">10 DE ABRIL DE 2026</div>
+                        <div class="counter-number" id="counterConocimos">0 días</div>
+                        <div class="counter-time" id="timeConocimos">0 meses · 0 días · 00:00:00</div>
+                        <div class="counter-text">Desde aquel día comenzó una historia que ninguno de los dos imaginaba.</div>
+                    </div>
+
+                    <!-- ANIVERSARIO -->
+                    <div class="counter-box anniversary-counter">
+                        <div class="counter-title">❤️ Nuestro aniversario ❤️</div>
+                        <div class="counter-date">24 DE JUNIO DE 2026</div>
+                        <div class="counter-number" id="counterAniversario">0 días</div>
+                        <div class="counter-time" id="timeAniversario">0 meses · 0 días · 00:00:00</div>
+                        <div class="counter-text">El día en que decidimos seguir construyendo esto juntos.</div>
+                    </div>
+                </div>
+
+                <!-- CONTENIDO -->
+                <div class="content">
+                    <p>Quizás nuestra historia no comenzó de la manera que cualquiera imaginaría. Simplemente llegaste a mi vida y poco a poco empezaste a ocupar un lugar que terminó siendo mucho más importante de lo que esperaba.</p>
+                    <p>Desde aquel <strong>10 de abril</strong> han pasado muchas cosas. Hemos tenido momentos que quisiera guardar para siempre y también momentos difíciles que nos hicieron cuestionarnos muchas cosas. Pero incluso en medio de nuestras discusiones, inseguridades y errores, siempre hubo algo que permaneció: las ganas de seguir intentando.</p>
+
+                    <div class="separator">❤️</div>
+
+                    <!-- HISTORIA TIMELINE -->
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-date">10 de abril de 2026</div>
+                            <div class="timeline-title">El día que nos conocimos</div>
+                            <div class="timeline-text">Un día que parecía uno más terminó convirtiéndose en el comienzo de algo que cambiaría muchas cosas para los dos.</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">Marzo → Abril</div>
+                            <div class="timeline-title">Poco a poco</div>
+                            <div class="timeline-text">Conversaciones, pequeños detalles, confianza y esa sensación de que cada día nos conocíamos un poquito más.</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">24 de junio de 2026</div>
+                            <div class="timeline-title">Nuestro aniversario</div>
+                            <div class="timeline-text">El día que nuestra historia tomó un significado todavía más especial y decidimos seguir eligiéndonos.</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">Nuestra historia</div>
+                            <div class="timeline-title">Todo lo que vino después</div>
+                            <div class="timeline-text">Risas, conversaciones, momentos difíciles, reconciliaciones, inseguridades, cariño y muchas cosas que solamente nosotros entendemos.</div>
+                        </div>
+                    </div>
+
+                    <p>Sé que no hemos sido perfectos. He cometido errores y muchas veces mis inseguridades hicieron que reaccionara de maneras que después terminé lamentando.</p>
+                    <p>También sé que tú has tenido tus propios momentos difíciles, tus responsabilidades, tus preocupaciones y cosas que llevas dentro. Y aunque a veces no haya sabido entenderlas de la mejor manera, quiero aprender a hacerlo.</p>
+                    <p>No quiero que nuestra historia se convierta únicamente en recordar nuestras discusiones. Quiero recordar también las risas, las conversaciones, las pequeñas cosas, las miradas y esos momentos en los que simplemente estar contigo hacía que todo pareciera un poco más tranquilo.</p>
+
+                    <div class="quote-box">
+                        <p class="quote-text">“No quiero una historia perfecta contigo quiero una historia real una en la que podamos equivocarnos aprender sanar y seguir eligiéndonos”</p>
+                    </div>
+
+                    <p>Yuli quiero que sepas que te quiero por todo lo que eres no solamente por los momentos bonitos sino también por la persona que he ido conociendo poco a poco.</p>
+                    <p>Me gusta pensar en todo lo que todavía nos queda por vivir. En los lugares que todavía podemos conocer en las conversaciones que todavía podemos tener en las risas que todavía nos faltan y en todos esos pequeños recuerdos que todavía podemos construir.</p>
+                    <p>No sé qué nos tenga preparado el futuro, pero sí sé que lo que vivimos fue real para mí. Cada sentimiento, cada ilusión, cada momento y cada recuerdo tienen un lugar importante en mi corazón.</p>
+
+                    <!-- MENSAJE FINAL -->
+                    <div class="final-message">
+                        <h2>PARA YULI ❤️</h2>
+                        <p>Gracias por haber llegado a mi vida. Gracias por cada momento que compartiste conmigo y por cada parte de ti que decidiste mostrarme.</p>
+                        <p>Si alguna vez volvemos a mirar atrás quiero que podamos hacerlo sabiendo que a pesar de todo intentamos cuidar aquello que alguna vez nos hizo tan felices.</p>
+                        <p>Porque nuestra historia no se mide solamente por los días que han pasado. Se mide por todo lo que sentimos durante ellos.</p>
+                        <p><strong>Y si pudiera volver al principio volvería a elegir conocerte.</strong></p>
+                        <p>Porque entre tantas personas, tantas historias y tantos caminos, me alegra que el mío haya encontrado el tuyo.</p>
+                        <p><strong>Emerson & Yuli ❤️‍🩹</strong></p>
+                    </div>
+                </div>
+
+                <!-- FOOTER -->
+                <footer class="footer">
+                    <div class="symbols">🥀 ⚡ ❤️‍🩹</div>
+                    <div class="footer-text">Una historia que todavía estamos escribiendo</div>
+                </footer>
+            </div>
+        </div>
+
+        <!-- FOTOGRAFÍAS DERECHA -->
+        <aside class="photo-gallery right-carousel">
+            <div class="photo-carousel">
+                <button class="carousel-btn prev" onclick="moveCarousel('right', -1)">❮</button>
+                <div class="photo-track" id="track-right">
+                    <div class="photo-card"><img src="img/foto9.jpg" alt="Emerson y Yuli - Foto 9"></div>
+                    <div class="photo-card"><img src="img/foto10.jpg" alt="Emerson y Yuli - Foto 10"></div>
+                    <div class="photo-card"><img src="img/foto11.jpg" alt="Emerson y Yuli - Foto 11"></div>
+                    <div class="photo-card"><img src="img/foto12.jpg" alt="Emerson y Yuli - Foto 12"></div>
+                    <!-- EXTENSIONES .JPEG CORREGIDAS SEGÚN TU ESTRUCTURA DE ARCHIVOS -->
+                    <div class="photo-card"><img src="img/foto13.jpeg" alt="Emerson y Yuli - Foto 13"></div>
+                    <div class="photo-card"><img src="img/foto14.jpeg" alt="Emerson y Yuli - Foto 14"></div>
+                    <div class="photo-card"><img src="img/foto15.jpeg" alt="Emerson y Yuli - Foto 15"></div>
+                    <div class="photo-card"><img src="img/foto16.jpeg" alt="Emerson y Yuli - Foto 16"></div>
+                </div>
+                <button class="carousel-btn next" onclick="moveCarousel('right', 1)">❯</button>
+            </div>
+        </aside>
+
+    </main>
+
+    <!-- RUTA CORREGIDA HACIA LA CARPETA JS -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>
