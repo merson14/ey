@@ -80,3 +80,26 @@ function moveCarousel(side, direction) {
     // Mostrar la nueva foto
     cards[indices[side]].classList.add('active');
 }
+
+// 4. Lógica para el carrusel de regalos y detalles
+let currentGiftIndex = 0;
+
+function moveGiftSlide(direction) {
+    const giftCards = document.querySelectorAll('.gift-card');
+    if (giftCards.length === 0) return;
+
+    // Quitar la clase active de la tarjeta actual
+    giftCards[currentGiftIndex].classList.remove('active');
+
+    // Calcular el nuevo índice de forma circular
+    currentGiftIndex += direction;
+
+    if (currentGiftIndex >= giftCards.length) {
+        currentGiftIndex = 0;
+    } else if (currentGiftIndex < 0) {
+        currentGiftIndex = giftCards.length - 1;
+    }
+
+    // Activar la nueva tarjeta
+    giftCards[currentGiftIndex].classList.add('active');
+}
