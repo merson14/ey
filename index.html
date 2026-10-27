@@ -61,7 +61,7 @@
                 <div class="corner-accent bottom-left"></div>
                 <div class="corner-accent bottom-right"></div>
 
-                <!-- VIDEO -->
+                <!-- VIDEO PRINCIPAL -->
                 <div class="youtube-container">
                     <div class="youtube-title">⚡ Una canción para nosotros ⚡</div>
                     <div class="video-responsive">
@@ -131,6 +131,63 @@
                             <div class="timeline-text">Risas, conversaciones, momentos difíciles, reconciliaciones, inseguridades, cariño y muchas cosas que solamente nosotros entendemos.</div>
                         </div>
                     </div>
+
+                    <!-- NUEVA SECCIÓN: CARRUSEL / GALERÍA DE REGALOS Y DETALLES -->
+                    <div class="gifts-section">
+                        <h2 class="section-subtitle">🎁 Nuestros Regalos y Detalles Especiales 🎁</h2>
+                        <p class="section-desc">Cada regalo y detalle guardan una promesa, un recuerdo y un momento único en nuestra historia.</p>
+                        
+                        <div class="gifts-carousel-container">
+                            <button class="gift-nav prev" onclick="moveGiftSlide(-1)">❮</button>
+                            
+                            <div class="gifts-slider" id="giftsSlider">
+                                <!-- Regalo 1 (Foto o Video) -->
+                                <div class="gift-card active">
+                                    <div class="gift-media">
+                                        <img src="img/regalo1.jpg" alt="Regalo de Aniversario">
+                                        <!-- Si prefieres video MP4/WebM o YouTube embed:
+                                        <video controls src="videos/regalo1.mp4"></video> 
+                                        -->
+                                    </div>
+                                    <div class="gift-info">
+                                        <span class="gift-tag">24 DE JUNIO - ANIVERSARIO</span>
+                                        <h3 class="gift-title">El Primer Detalle</h3>
+                                        <p class="gift-text">Aquel regalo hecho a mano para recordar nuestro compromiso de seguir juntos.</p>
+                                    </div>
+                                </div>
+
+                                <!-- Regalo 2 -->
+                                <div class="gift-card">
+                                    <div class="gift-media">
+                                        <img src="img/regalo2.jpg" alt="Detalle Especial">
+                                    </div>
+                                    <div class="gift-info">
+                                        <span class="gift-tag">MOMENTOS ESPECIALES</span>
+                                        <h3 class="gift-title">Libretita & Cartas</h3>
+                                        <p class="gift-text">Cada palabra escrita con dedicación para reflejar lo que sentimos.</p>
+                                    </div>
+                                </div>
+
+                                <!-- Regalo 3 (Video) -->
+                                <div class="gift-card">
+                                    <div class="gift-media">
+                                        <div class="video-responsive">
+                                            <iframe src="https://www.youtube.com/embed/Z1zYWPBsNjw" title="Video de Regalo" allowfullscreen></iframe>
+                                        </div>
+                                    </div>
+                                    <div class="gift-info">
+                                        <span class="gift-tag">VIDEO / ANIVERSARIO</span>
+                                        <h3 class="gift-title">Nuestros Recuerdos en Video</h3>
+                                        <p class="gift-text">Un pequeño resumen en video de momentos imborrables.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button class="gift-nav next" onclick="moveGiftSlide(1)">❯</button>
+                        </div>
+                    </div>
+
+                    <div class="separator">❤️</div>
 
                     <p>Sé que no hemos sido perfectos. He cometido errores y muchas veces mis inseguridades hicieron que reaccionara de maneras que después terminé lamentando.</p>
                     <p>También sé que tú has tenido tus propios momentos difíciles, tus responsabilidades, tus preocupaciones y cosas que llevas dentro. Y aunque a veces no haya sabido entenderlas de la mejor manera, quiero aprender a hacerlo.</p>
